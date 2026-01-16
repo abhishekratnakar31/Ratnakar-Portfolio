@@ -1,6 +1,6 @@
 function AboutMe() {
     return (
-        <section className="min-h-screen bg-black text-white flex flex-col justify-center px-8 md:px-24">
+        <section className="min-h-screen bg-primary text-white flex flex-col justify-center px-8 md:px-24">
             <h2 className="text-6xl md:text-8xl font-black mb-12 uppercase tracking-tighter">
                 About Me
             </h2>

@@ -1,6 +1,6 @@
 function Footer() {
     return (
-        <footer className="bg-black text-white py-24 px-8 md:px-24 border-t border-gray-900">
+        <footer className="bg-primary text-white py-24 px-8 md:px-24 border-t border-white/10">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-end">
                 <div>
                     <h3 className="text-4xl font-black mb-2 tracking-tighter">GET IN TOUCH</h3>

@@ -1,11 +1,12 @@
+import Background from "./Background";
+
 function Hero() {
   return (
-    <section className="h-screen bg-[#d9d9d9] flex items-center justify-center relative">
-      <h1 className="text-[clamp(4rem,12vw,12rem)] font-black tracking-[-0.04em]">
-        RAUB
+    <section className="h-screen bg-primary flex items-center justify-center relative text-white overflow-hidden">
+      <Background />
+      <h1 className="relative z-10 text-[clamp(4rem,12vw,12rem)] font-black tracking-[-0.04em]">
+        Ratnakar
       </h1>
-
-
     </section>
   );
 }
