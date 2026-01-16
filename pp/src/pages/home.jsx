@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 
 function Home() {
   return (
-    <main className="bg-primary text-white w-full overflow-x-hidden">
+    <main className=" text-white w-full overflow-x-hidden">
       <Hero />
       <AboutMe />
       <Projects />

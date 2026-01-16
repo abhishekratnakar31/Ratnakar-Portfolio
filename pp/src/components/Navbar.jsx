@@ -1,25 +1,40 @@
+import { useState, useEffect } from "react";
 import { FaMedium, FaFacebookF, FaInstagram, FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-    return (
-        <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-5 py-3 text-white mix-blend">
+    const [time, setTime] = useState(new Date());
 
-            <div className="text-xl font-semibold tracking-tight">
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setTime(new Date());
+        }, 1000);
+
+        return () => clearInterval(timer);
+    }, []);
+
+    const formatTime = (date) => {
+        return date.toLocaleTimeString('en-US', {
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: true
+        }) + " in India";
+    };
+
+    return (
+        <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-5 py-3 text-white mix-blend-difference">
+
+            <div className="text-sm  tracking-tight">
                 <Link to="/">Abhishek Ratnakar</Link>
             </div>
 
 
-            <div className="flex items-center gap-8 text-sm font-medium">
-                <Link to="/projects" className="hover:opacity-70 transition-opacity">Projects</Link>
-
-                <a href="#contact" className="hover:opacity-70 transition-opacity">Contact us</a>
-
-                <div className="flex items-center gap-4 text-lg">
-                    <a href="https://github.com/abhishekratnakar31" className="hover:opacity-70 transition-opacity"><FaGithub /></a>
-                    {/* <a href="#" className="hover:opacity-70 transition-opacity"><FaInstagram /></a> */}
-                    <a href="https://www.linkedin.com/in/abhishek-ratnakar-668625322/" className="hover:opacity-70 transition-opacity"><FaLinkedinIn /></a>
+            <div className="flex items-center gap-6 text-sm font-medium">
+                {/* Clock */}
+                <div className="font-mono tracking-widest text-xs md:text-sm uppercase">
+                    {formatTime(time)}
                 </div>
+                
             </div>
         </nav>
     );
