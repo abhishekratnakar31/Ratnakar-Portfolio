@@ -15,7 +15,7 @@ const Background = () => {
             //     {
             //         scale: 1,
             //         rotate: 0,
-            //         duration: 2,
+            //         duration: 2.75,
             //         ease: "expo.inOut",
             //     }
             // );
@@ -36,16 +36,24 @@ const Background = () => {
                     ease: "power3.out",
                 });
 
-                gsap.to(".sky", {
-                    x: xMove,
+
+
+                gsap.to(".character", {
+                    x: xMove * 0.7,
                     duration: 0.5,
-                    ease: "power3.out",
+                    ease: "power1.out",
                 });
 
-                gsap.to(".bg", {
-                    x: xMove * 1.7,
+                gsap.to(".one", {
+                    x: xMove * 0.3,
                     duration: 0.5,
-                    ease: "power3.out",
+                    ease: "power1.out",
+                });
+
+                gsap.to(".two", {
+                    x: xMove * 0.3,
+                    duration: 0.5,
+                    ease: "power1.out",
                 });
             };
 
@@ -60,32 +68,23 @@ const Background = () => {
     return (
         <div
             ref={containerRef}
-            className="relative w-full h-screen overflow-hidden bg-black font-['Arial_Black']"
+            className="relative w-full h-screen overflow-hidden bg-primary font-['Arial_Black']"
         >
             <div className="main w-full h-full">
                 <div className="landing relative w-full h-full bg-black">
                     <div className="imagesdiv relative w-full h-full overflow-hidden">
-                        <img
-                            className="absolute sky scale-[1.5] rotate-[-20deg] top-0 left-0 w-full h-full object-cover"
-                            src=""
-                            alt="Sky"
-                        />
-
-                        <img
-                            className="absolute bg scale-[1.8] rotate-[-3deg] top-0 left-0 w-full h-full object-cover"
-                            src=""
-                            alt="Background"
-                        />
 
                         <div className="text text-white  flex flex-col gap-3 absolute top-1/3 left-1/4 -translate-x-1/2  rotate-[0deg]">
                             <h1 className="text-[1rem]  leading-none -ml-10 font-black">
                                 {/* Hi i am.... <br /> */}
                             </h1>
-                            
+
                         </div>
 
+                        
+
                         <img
-                            className="absolute character -bottom-[45%] left-1/3 -translate-x-1/2 scale-[1] rotate-[-5deg]"
+                            className="absolute character -bottom-[45%] left-1/2 -translate-x-1/2 scale-[1]  rotate-[-5deg]"
                             src="me.png"
                             alt="Character"
                         />
