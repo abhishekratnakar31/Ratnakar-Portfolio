@@ -3,7 +3,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#ffffff",
+        primary: "#053205ff",
         charcoal: "#000000",
       },
       fontFamily: {

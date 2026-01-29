@@ -1,7 +1,7 @@
 function AboutMe() {
     return (
-        <section className="min-h-screen bg-primary text-charcoal flex flex-col justify-center px-8 md:px-24">
-            <h2 className="text-6xl md:text-8xl font-black mb-12 uppercase tracking-tighter">
+        <section className="relative z-10 h-screen bg-primary text-charcoal flex flex-col justify-center px-8 md:px-24">
+            <h2 className="text-6xl md:text-8xl font-black  uppercase tracking-tighter">
                 About Me
             </h2>
             <div className="max-w-4xl text-xl md:text-3xl font-light leading-relaxed text-gray-400">

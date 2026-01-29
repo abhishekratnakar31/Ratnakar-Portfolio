@@ -1,7 +1,10 @@
 import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "remixicon/fonts/remixicon.css";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Background = () => {
     const containerRef = useRef(null);
@@ -29,35 +32,49 @@ const Background = () => {
             // Mouse move parallax
             const handleMouseMove = (e) => {
                 const xMove = (e.clientX / window.innerWidth - 0.5) * 40;
+                const yMove = (e.clientY / window.innerHeight - 0.5) * 40;
 
                 gsap.to(".text", {
-                    x: `${xMove * 0.1}%`,
+                    x: xMove * 0.1,
+                    y: yMove * 0.1,
                     duration: 0.5,
                     ease: "power3.out",
                 });
 
-
-
                 gsap.to(".character", {
                     x: xMove * 0.7,
-                    duration: 0.5,
-                    ease: "power1.out",
-                });
-
-                gsap.to(".one", {
-                    x: xMove * 0.3,
-                    duration: 0.5,
-                    ease: "power1.out",
-                });
-
-                gsap.to(".two", {
-                    x: xMove * 0.3,
+                    y: yMove * 0.2, // Slight vertical movement too
                     duration: 0.5,
                     ease: "power1.out",
                 });
             };
 
             window.addEventListener("mousemove", handleMouseMove);
+
+            // Scroll Parallax
+            // Scroll Parallax
+            gsap.to(".text", {
+                yPercent: 50, // Moves down faster
+                ease: "none",
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top 20%",
+                    end: "+=200%",
+                    scrub: true,
+                },
+            });
+
+            gsap.to(".character", {
+                yPercent: 20, // Moves down slower
+                ease: "none",
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top top",
+                    end: "+=100%",
+                    scrub: true,
+                },
+            });
+
             return () =>
                 window.removeEventListener("mousemove", handleMouseMove);
         }, containerRef);
@@ -91,20 +108,20 @@ const Background = () => {
                         </div>
 
 
-                        {/* 
+
                         <img
-                            className="absolute character -bottom-[45%] left-1/2 -translate-x-1/2 scale-[1]  rotate-[-5deg]"
+                            className="absolute character bottom-30 left-1/2 -translate-x-1/2 scale-[1] grayscale transition-all duration-500 will-change-transform"
                             src="me.png"
                             alt="Character"
-                        /> */}
+                        />
                     </div>
 
-                    {/* <div className="absolute bottom-0 left-0 w-full py-10 px-10 bg-gradient-to-t from-black to-transparent text-white flex justify-between items-end">
-                        <div className="flex gap-4 items-center opacity-50">
-                            <i className="text-4xl ri-arrow-down-line"></i>
-                            <h3 className="text-xl">Scroll Down</h3>
+                    <div className="absolute bottom-0 left-0 w-full py-10 px-10 bg-gradient-to-t from-transparent to-transparent text-charcoal flex justify-between items-end">
+                        <div className="flex gap-4 items-center opacity-50 animate-bounce">
+                            {/* <i className="text-4xl ri-arrow-down-line"></i>
+                            <h3 className="text-xl font-mono">Scroll Down</h3> */}
                         </div>
-                    </div> */}
+                    </div>
                 </div>
             </div>
         </div>
@@ -112,3 +129,4 @@ const Background = () => {
 };
 
 export default Background;
+
