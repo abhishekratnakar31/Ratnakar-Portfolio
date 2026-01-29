@@ -3,8 +3,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#0d4839",
-        charcoal: "#1c1c1c",
+        primary: "#ffffff",
+        charcoal: "#000000",
       },
       fontFamily: {
         sans: ['"Lexend Giga"', "sans-serif"],

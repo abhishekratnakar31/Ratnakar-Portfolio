@@ -22,19 +22,22 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-5 py-3 text-white mix-blend-difference">
+        <nav className="fixed top-6 left-0 w-full z-50 flex justify-between items-center px-5 py-3 text-white mix-blend-difference">
 
             <div className="text-sm  tracking-tight">
                 <Link to="/">Abhishek Ratnakar</Link>
             </div>
+            <div className="absolute left-1/2 top-11 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-1">
+                <a href="#" className="text-xs font-light tracking-wide hover:opacity-70 hover:scale-110 transition-all duration-300 ease-out">projects</a>
+                <a href="#" className="text-xs font-light tracking-wide hover:opacity-70 hover:scale-110 transition-all duration-300 ease-out">contact</a>
+            </div>
 
-
-            <div className="flex items-center gap-6 text-sm font-medium">
+            <div className="flex items-center gap-1 text-sm font-medium">
                 {/* Clock */}
                 <div className="font-mono tracking-widest text-xs md:text-sm uppercase">
                     {formatTime(time)}
                 </div>
-                
+
             </div>
         </nav>
     );

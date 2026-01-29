@@ -71,23 +71,32 @@ const Background = () => {
             className="relative w-full h-screen overflow-hidden bg-primary font-['Arial_Black']"
         >
             <div className="main w-full h-full">
-                <div className="landing relative w-full h-full bg-black">
+                <div className="landing relative w-full h-full bg-primary">
                     <div className="imagesdiv relative w-full h-full overflow-hidden">
 
-                        <div className="text text-white  flex flex-col gap-3 absolute top-1/3 left-1/4 -translate-x-1/2  rotate-[0deg]">
-                            <h1 className="text-[1rem]  leading-none -ml-10 font-black">
-                                {/* Hi i am.... <br /> */}
-                            </h1>
-
+                        <div className="text text-charcoal flex flex-col gap-4 absolute top-1/2 left-10 md:left-24 -translate-y-1/2 max-w-md z-50">
+                            <p className="bio font-mono text-xs md:text-sm leading-relaxed tracking-wide text-justify">
+                                hi I’m a second-year student who enjoys designing and building things, turning ideas into practical solutions.
+                                Curious by nature, I like learning new technologies and using them to create clean, functional projects.
+                            </p>
                         </div>
 
-                        
+                        <div className="text text-charcoal flex gap-6 fixed bottom-10 right-10 z-50">
+                            <a href="https://www.linkedin.com/in/abhishek-ratnakar-668625322/" target="_blank" rel="noopener noreferrer" className="font-mono text-xs md:text-sm hover:opacity-70 transition-opacity uppercase tracking-wide">
+                                LinkedIn
+                            </a>
+                            <a href="https://github.com/abhishekratnakar31" target="_blank" rel="noopener noreferrer" className="font-mono text-xs md:text-sm hover:opacity-70 transition-opacity uppercase tracking-wide">
+                                Github
+                            </a>
+                        </div>
 
+
+                        {/* 
                         <img
                             className="absolute character -bottom-[45%] left-1/2 -translate-x-1/2 scale-[1]  rotate-[-5deg]"
                             src="me.png"
                             alt="Character"
-                        />
+                        /> */}
                     </div>
 
                     {/* <div className="absolute bottom-0 left-0 w-full py-10 px-10 bg-gradient-to-t from-black to-transparent text-white flex justify-between items-end">

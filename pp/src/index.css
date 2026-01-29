@@ -6,6 +6,6 @@
 
 body {
   /* background-color: #0d4839;  */
-  color: white;
+  @apply text-charcoal bg-primary;
   font-family: "Lexend Giga", sans-serif;
 }
