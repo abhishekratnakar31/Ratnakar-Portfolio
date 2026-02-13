@@ -13,25 +13,25 @@ const Background = () => {
         const ctx = gsap.context(() => {
             // Initial entrance animation
             // gsap.fromTo(
-            //     ".main",
+            //     ".character",
             //     { scale: 1.7, rotate: -10 },
             //     {
             //         scale: 1,
             //         rotate: 0,
-            //         duration: 2.75,
+            //         duration: 1.75,
             //         ease: "expo.inOut",
             //     }
             // );
 
             // gsap.fromTo(
-            //     [".sky", ".bg", ".character", ".text"],
+            //     ".character",
             //     { opacity: 0 },
             //     { opacity: 1, duration: 1.5, delay: 0.3 }
             // );
 
             // Mouse move parallax
             const handleMouseMove = (e) => {
-                const xMove = (e.clientX / window.innerWidth - 0.5) * 40;
+                const xMove = (e.clientX / winow.innerWidth - 0.5) * 40;
                 const yMove = (e.clientY / window.innerHeight - 0.5) * 40;
 
                 gsap.to(".text", {
