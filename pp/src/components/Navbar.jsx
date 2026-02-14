@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { FaMedium, FaFacebookF, FaInstagram, FaLinkedinIn, FaGithub } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+    const location = useLocation();
     const [time, setTime] = useState(new Date());
 
     useEffect(() => {
@@ -21,6 +22,8 @@ const Navbar = () => {
         }) + " in India";
     };
 
+    if (location.pathname === "/projects") return null;
+
     return (
         <nav className="fixed top-6 left-0 w-full z-50 flex justify-between items-center px-5 py-3 text-white mix-blend-difference">
 
@@ -28,8 +31,10 @@ const Navbar = () => {
                 <Link to="/">Abhishek Ratnakar</Link>
             </div>
             <div className="absolute left-1/2 top-11 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-1">
-                <a href="#" className="text-xs font-light tracking-wide hover:opacity-70 hover:scale-110 transition-all duration-300 ease-out">projects</a>
-                <a href="#" className="text-xs font-light tracking-wide hover:opacity-70 hover:scale-110 transition-all duration-300 ease-out">contact</a>
+                {location.pathname !== "/projects" && (
+                    <Link to="/projects" className="text-xs font-light tracking-wide hover:opacity-70 hover:scale-110 transition-all duration-300 ease-out">projects</Link>
+                )}
+
             </div>
 
             <div className="flex items-center gap-1 text-sm font-medium">

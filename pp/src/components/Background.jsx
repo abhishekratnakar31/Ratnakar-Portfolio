@@ -31,7 +31,7 @@ const Background = () => {
 
             // Mouse move parallax
             const handleMouseMove = (e) => {
-                const xMove = (e.clientX / winow.innerWidth - 0.5) * 40;
+                const xMove = (e.clientX / window.innerWidth - 0.5) * 40;
                 const yMove = (e.clientY / window.innerHeight - 0.5) * 40;
 
                 gsap.to(".text", {
@@ -96,15 +96,6 @@ const Background = () => {
                                 hi I’m a second-year student who enjoys designing and building things, turning ideas into practical solutions.
                                 Curious by nature, I like learning new technologies and using them to create clean, functional projects.
                             </p>
-                        </div>
-
-                        <div className="text text-charcoal flex gap-6 fixed bottom-10 right-10 z-50">
-                            <a href="https://www.linkedin.com/in/abhishek-ratnakar-668625322/" target="_blank" rel="noopener noreferrer" className="font-mono text-xs md:text-sm hover:opacity-70 transition-opacity uppercase tracking-wide">
-                                LinkedIn
-                            </a>
-                            <a href="https://github.com/abhishekratnakar31" target="_blank" rel="noopener noreferrer" className="font-mono text-xs md:text-sm hover:opacity-70 transition-opacity uppercase tracking-wide">
-                                Github
-                            </a>
                         </div>
 
 

@@ -5,7 +5,7 @@ import CreativeSection from "../components/CreativeSection";
 import Footer from "../components/Footer";
 import ThreeDHoverGallery from "../components/ThreeDHoverGallery";
 import { Skiper25 } from "../components/Skiper25";
-import { Skiper31 } from "../components/Skiper31";
+
 
 function Home() {
   return (
@@ -14,12 +14,12 @@ function Home() {
       <div className="h-[50vh] w-full bg-white"></div>
       <ThreeDHoverGallery />
       <AboutMe />
-      <Skiper31 />
       <Projects />
       <div className="h-screen w-full bg-white"></div>
       <CreativeSection />
       <div className="h-screen w-full bg-white"></div>
       <Skiper25 />
+      <Footer />
     </main>
   );
 }

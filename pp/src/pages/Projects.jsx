@@ -2,15 +2,6 @@ import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 
-/* -------------------- DATA -------------------- */
-
-const projects = [
-  { title: 'Google Calendar Sync', src: '/gcs.png', color: '#095019ff', link: 'https://google-calendar-sync-jet.vercel.app' },
-  { title: 'Mini Game Dashboard', src: '/minihub.png', color: '#8C8C8C', link: 'https://minigamedashboard.onrender.com' },
-  { title: 'Performly', src: '/performly.png', color: '#EFE8D3', link: 'https://performly-beige.vercel.app' },
-
-];
-
 /* -------------------- ANIMATION -------------------- */
 
 const scaleAnimation = {
@@ -29,10 +20,16 @@ const scaleAnimation = {
   },
 };
 
+/* -------------------- DATA -------------------- */
+
+import { projects } from '../data/projectsData';
+
+
 /* -------------------- PAGE -------------------- */
 
 export default function Projects() {
   const [modal, setModal] = useState({ active: false, index: 0 });
+
 
   const modalContainer = useRef(null);
   const cursor = useRef(null);
@@ -95,7 +92,7 @@ export default function Projects() {
                 style={styles.project}
                 onMouseEnter={() => setModal({ active: true, index })}
                 onMouseLeave={() => setModal({ active: false, index })}
-                onClick={() => { if (project.link && project.link !== '#') window.open(project.link, '_blank'); }}
+                onClick={() => { if (project.link) window.open(project.link, '_blank'); }}
               >
                 <h2 style={styles.h2}>{project.title}</h2>
                 <p style={styles.p}>Design & Development</p>
@@ -159,7 +156,7 @@ export default function Projects() {
         initial="initial"
         animate={modal.active ? 'enter' : 'closed'}
       >
-        View
+        Visit
       </motion.div>
     </>
   );
