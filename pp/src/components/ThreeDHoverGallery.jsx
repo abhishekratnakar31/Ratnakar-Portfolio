@@ -167,7 +167,7 @@ const ThreeDHoverGallery = ({
             )}
             style={backgroundColor ? { backgroundColor, ...style } : style}
         >
-            <h2 className="text-4xl md:text-6xl font-black mb-12 text-black uppercase tracking-tighter">My Creations</h2>
+            <h2 className="text-xl md:text-xl font-light mb-12 text-black uppercase tracking-widest">My Creations</h2>
             <div
                 ref={containerRef}
                 // Inner flex container for the images, centered and taking full width.

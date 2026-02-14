@@ -88,18 +88,23 @@ export default function Projects() {
       {/* -------- PROJECT LIST -------- */}
       <main style={styles.main}>
         <div style={styles.body}>
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              style={styles.project}
-              onMouseEnter={() => setModal({ active: true, index })}
-              onMouseLeave={() => setModal({ active: false, index })}
-              onClick={() => { if (project.link && project.link !== '#') window.open(project.link, '_blank'); }}
-            >
-              <h2 style={styles.h2}>{project.title}</h2>
-              <p style={styles.p}>Design & Development</p>
-            </div>
-          ))}
+          <div style={styles.columnLeft}>
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                style={styles.project}
+                onMouseEnter={() => setModal({ active: true, index })}
+                onMouseLeave={() => setModal({ active: false, index })}
+                onClick={() => { if (project.link && project.link !== '#') window.open(project.link, '_blank'); }}
+              >
+                <h2 style={styles.h2}>{project.title}</h2>
+                <p style={styles.p}>Design & Development</p>
+              </div>
+            ))}
+          </div>
+          <div style={styles.columnRight}>
+            <h1 style={styles.heading}>My Developments</h1>
+          </div>
         </div>
       </main>
 
@@ -163,6 +168,13 @@ export default function Projects() {
 /* -------------------- STYLES -------------------- */
 
 const styles = {
+  heading: {
+    fontSize: '30px', // Bigger than h2 (60px)
+    fontWeight: 400,
+    marginBottom: '80px', // Add some space below the heading
+    color: '#000000',
+    textAlign: 'left', // Center the heading
+  },
   main: {
     display: 'flex',
     height: '100vh',
@@ -173,12 +185,28 @@ const styles = {
   body: {
     width: '1000px',
     maxWidth: '90%', // Add max-width for some responsiveness
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    gap: '20px',
+  },
+  columnLeft: {
+    flex: '2',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  columnRight: {
+    flex: '1',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: '50px',
   },
   project: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '50px 100px',
+    padding: '50px 20px',
     borderTop: '1px solid #c9c9c9',
     cursor: 'pointer',
     color: '#000000', // Ensure text is visible

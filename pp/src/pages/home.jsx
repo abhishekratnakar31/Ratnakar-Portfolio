@@ -11,12 +11,14 @@ function Home() {
   return (
     <main className=" text-white w-full overflow-x-hidden">
       <Hero />
+      <div className="h-[50vh] w-full bg-white"></div>
       <ThreeDHoverGallery />
       <AboutMe />
       <Skiper31 />
       <Projects />
+      <div className="h-screen w-full bg-white"></div>
       <CreativeSection />
-      <Footer />
+      <div className="h-screen w-full bg-white"></div>
       <Skiper25 />
     </main>
   );
