@@ -1,35 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Poiret+One&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html {
-}
-
-body {
-  /* background-color: #0d4839;  */
-  @apply text-charcoal bg-primary/0;
-  font-family: "Lexend Giga", sans-serif;
-}
-
-html.lenis,
-html.lenis body {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-.lenis.lenis-smooth iframe {
-  pointer-events: none;
+@layer base {
+  body {
+    @apply bg-black text-white antialiased selection:bg-white selection:text-black;
+  }
 }
